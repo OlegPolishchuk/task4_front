@@ -2,7 +2,7 @@ import axios from "axios";
 import {AuthEndpoints} from "enums";
 
 export const instance = axios.create({
-  baseURL: 'http://localhost:5000/'
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000/'
 })
 
 const skipUrls = [AuthEndpoints.Logout, AuthEndpoints.Login, AuthEndpoints.Refresh] as string[];
